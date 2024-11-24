@@ -28,7 +28,7 @@
           }
         }
       }
-    };
+    }
 
     // testing
     const simplestyle = {
@@ -107,10 +107,10 @@
   //     }
   //   `
   //   document.head.appendChild(defaultstyles)
-  // }
+  }
 
   // Initialize everything
   loadTailwind()
-    .then(initializecss)
+    .then(css)
     .catch(console.error)
 })();
