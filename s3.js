@@ -1,11 +1,18 @@
 (function() {
 
+  let tailwind_loaded = false
+
   const load_tailwind = () => {
     return new Promise((resolve, reject) => {
       const script = document.createElement('script')
       script.src = 'https://cdn.tailwindcss.com'
-      script.onload = resolve
-      script.onerror = reject
+      script.onload = () => {
+        tailwind_loaded = true
+        resolve('TailwindCSS loaded successfully')
+      }
+      script.onerror = () => {
+        reject('Failed to load TailwindCSS')
+      }
       document.head.appendChild(script)
     })
   }
@@ -120,10 +127,12 @@
   const init = async () => {
     try {
       await load_tailwind()
-      setup_default_styles()
-      configure_tailwind()
-      apply_custom_styles()
-      console.log('Tailwind CSS setup completed successfully')
+      if(tailwind_loaded) {
+        setup_default_styles()
+        configure_tailwind()
+        apply_custom_styles()
+        console.log('Tailwind CSS setup completed successfully')
+      }
     } catch (error) {
       console.error('Failed to initialize Tailwind CSS:', error)
     }
