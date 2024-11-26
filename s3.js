@@ -69,8 +69,8 @@ const custom_classes = {
   "section": "py-16 sm:py-20 lg:py-24",
   "wrapper": "relative max-w-full overflow-hidden",
   "container-fluid": "w-full px-4 sm:px-6 lg:px-8",
-  "row": "flex flex-wrap -mx-4",
-  "col": "px-4",
+  "row": "flex flex-row",
+  "col": "flex flex-col",
 
   // Typography
   "display-1": "text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 tracking-tight",
