@@ -2,9 +2,8 @@
   // Load Tailwind CSS from CDN
   const loadTailwind = () => {
     return new Promise((resolve, reject) => {
-      const script = document.createElement('link')
-      script.rel = 'stylesheet'
-      script.href = 'https://cdn.tailwindcss.com'
+      const script = document.createElement('script')
+      script.src = 'https://cdn.tailwindcss.com'
       script.onload = resolve
       script.onerror = reject
       document.head.appendChild(script)
