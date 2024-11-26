@@ -122,6 +122,8 @@
       .map(([selector, classes]) => `${selector} { @apply ${classes}; }`)
       .join('\n')
     document.head.appendChild(style)
+
+    window.tailwind.refresh()
   }
 
   const init = async () => {
