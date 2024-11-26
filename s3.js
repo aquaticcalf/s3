@@ -64,35 +64,129 @@ Check your Browserslist config to be sure that your targets are set up correctly
 `))}rb.exports=nr;function nr(...i){let e;if(i.length===1&&dO(i[0])?(e=i[0],i=void 0):i.length===0||i.length===1&&!i[0]?i=void 0:i.length<=2&&(Array.isArray(i[0])||!i[0])?(e=i[1],i=i[0]):typeof i[i.length-1]=="object"&&(e=i.pop()),e||(e={}),e.browser)throw new Error("Change `browser` option to `overrideBrowserslist` in Autoprefixer");if(e.browserslist)throw new Error("Change `browserslist` option to `overrideBrowserslist` in Autoprefixer");e.overrideBrowserslist?i=e.overrideBrowserslist:e.browsers&&(typeof console!="undefined"&&console.warn&&(Zl.red?console.warn(Zl.red(tb.replace(/`[^`]+`/g,n=>Zl.yellow(n.slice(1,-1))))):console.warn(tb)),i=e.browsers);let t={ignoreUnknownVersions:e.ignoreUnknownVersions,stats:e.stats,env:e.env};function r(n){let a=eb,s=new uO(a.browsers,i,n,t),o=s.selected.join(", ")+JSON.stringify(e);return eu.has(o)||eu.set(o,new fO(a.prefixes,s,e)),eu.get(o)}return{postcssPlugin:"autoprefixer",prepare(n){let a=r({from:n.opts.from,env:e.env});return{OnceExit(s){hO(n,a),e.remove!==!1&&a.processor.remove(s,n),e.add!==!1&&a.processor.add(s,n)}}},info(n){return n=n||{},n.from=n.from||h.cwd(),pO(r(n))},options:e,browsers:i}}nr.postcss=!0;nr.data=eb;nr.defaults=oO.defaults;nr.info=()=>nr().info()});var nb={};Ae(nb,{default:()=>mO});var mO,sb=C(()=>{l();mO=[]});var ob={};Ae(ob,{default:()=>gO});var ab,gO,lb=C(()=>{l();hi();ab=X(bi()),gO=Ze(ab.default.theme)});var fb={};Ae(fb,{default:()=>yO});var ub,yO,cb=C(()=>{l();hi();ub=X(bi()),yO=Ze(ub.default)});l();"use strict";var wO=Je(pm()),bO=Je(ge()),vO=Je(ib()),xO=Je((sb(),nb)),kO=Je((lb(),ob)),SO=Je((cb(),fb)),CO=Je((Zn(),bu)),AO=Je((mo(),ho)),_O=Je((hs(),Ku));function Je(i){return i&&i.__esModule?i:{default:i}}var Hn="tailwind",tu="text/tailwindcss",pb="/template.html",xt,db=!0,hb=0,ru=new Set,iu,mb="",gb=(i=!1)=>({get(e,t){return(!i||t==="config")&&typeof e[t]=="object"&&e[t]!==null?new Proxy(e[t],gb()):e[t]},set(e,t,r){return e[t]=r,(!i||t==="config")&&nu(!0),!0}});window[Hn]=new Proxy({config:{},defaultTheme:kO.default,defaultConfig:SO.default,colors:CO.default,plugin:AO.default,resolveConfig:_O.default},gb(!0));function yb(i){iu.observe(i,{attributes:!0,attributeFilter:["type"],characterData:!0,subtree:!0,childList:!0})}new MutationObserver(async i=>{let e=!1;if(!iu){iu=new MutationObserver(async()=>await nu(!0));for(let t of document.querySelectorAll(`style[type="${tu}"]`))yb(t)}for(let t of i)for(let r of t.addedNodes)r.nodeType===1&&r.tagName==="STYLE"&&r.getAttribute("type")===tu&&(yb(r),e=!0);await nu(e)}).observe(document.documentElement,{attributes:!0,attributeFilter:["class"],childList:!0,subtree:!0});async function nu(i=!1){i&&(hb++,ru.clear());let e="";for(let r of document.querySelectorAll(`style[type="${tu}"]`))e+=r.textContent;let t=new Set;for(let r of document.querySelectorAll("[class]"))for(let n of r.classList)ru.has(n)||t.add(n);if(document.body&&(db||t.size>0||e!==mb||!xt||!xt.isConnected)){for(let n of t)ru.add(n);db=!1,mb=e,self[pb]=Array.from(t).join(" ");let{css:r}=await(0,bO.default)([(0,wO.default)({...window[Hn].config,_hash:hb,content:[pb],plugins:[...xO.default,...Array.isArray(window[Hn].config.plugins)?window[Hn].config.plugins:[]]}),(0,vO.default)({remove:!1})]).process(`@tailwind base;@tailwind components;@tailwind utilities;${e}`);(!xt||!xt.isConnected)&&(xt=document.createElement("style"),document.head.append(xt)),xt.textContent=r}}
 
 const custom_classes = {
-  // Layout
-  'container': 'max-w-7xl mx-auto px-6 sm:px-8 lg:px-10',
-  
+  // Layout & Containers
+  'container': 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full',
+  'section': 'py-16 sm:py-20 lg:py-24',
+  'wrapper': 'relative max-w-full overflow-hidden',
+
+  // Typography
+  'display-1': 'text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 tracking-tight',
+  'display-2': 'text-4xl sm:text-5xl font-bold text-gray-800 tracking-tight',
+  'heading-1': 'text-3xl sm:text-4xl font-bold text-gray-900 mb-4',
+  'heading-2': 'text-2xl sm:text-3xl font-semibold text-gray-800 mb-3',
+  'heading-3': 'text-xl sm:text-2xl font-semibold text-gray-700 mb-3',
+  'paragraph': 'text-base text-gray-600 leading-relaxed mb-4',
+  'text-small': 'text-sm text-gray-500',
+  'text-large': 'text-lg text-gray-700',
+  'link': 'text-blue-600 hover:text-blue-800 underline-offset-4 hover:underline transition-colors',
+
   // Buttons
-  'btn': 'inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300 ease-bounce transform hover:scale-105 active:scale-95',
-  'btn-primary': 'bg-pink-400 text-white hover:bg-pink-300 active:bg-pink-500 shadow-lg shadow-pink-200',
-  'btn-secondary': 'bg-purple-400 text-white hover:bg-purple-300 active:bg-purple-500 shadow-lg shadow-purple-200',
-  'btn-ghost': 'bg-transparent hover:bg-pink-50 active:bg-pink-100 text-pink-400',
-  'btn-outline': 'border-3 border-pink-400 bg-transparent hover:bg-pink-50 text-pink-400',
-  'btn-sm': 'px-4 py-2 text-sm',
-  'btn-lg': 'px-8 py-4 text-lg',
-  
+  'btn': 'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed',
+  'btn-primary': 'bg-blue-500 text-white hover:bg-blue-600 active:bg-blue-700 focus:ring-blue-300 shadow-md hover:shadow-lg',
+  'btn-secondary': 'bg-gray-500 text-white hover:bg-gray-600 active:bg-gray-700 focus:ring-gray-300 shadow-md hover:shadow-lg',
+  'btn-success': 'bg-green-500 text-white hover:bg-green-600 active:bg-green-700 focus:ring-green-300 shadow-md hover:shadow-lg',
+  'btn-danger': 'bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus:ring-red-300 shadow-md hover:shadow-lg',
+  'btn-ghost': 'bg-transparent text-gray-700 hover:bg-gray-100 active:bg-gray-200 focus:ring-gray-200',
+  'btn-outline': 'border-2 border-blue-500 text-blue-500 bg-transparent hover:bg-blue-50 hover:border-blue-600 focus:ring-blue-200',
+  'btn-sm': 'px-3 py-1.5 text-sm',
+  'btn-lg': 'px-6 py-3 text-lg',
+  'btn-icon': 'p-2 rounded-full hover:bg-gray-100',
+
+  // Forms
+  'form-group': 'mb-4',
+  'form-input': 'block w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 disabled:bg-gray-100 disabled:cursor-not-allowed',
+  'form-label': 'block text-sm font-medium text-gray-700 mb-2',
+  'form-error': 'text-red-500 text-sm mt-1',
+  'form-hint': 'text-xs text-gray-500 mt-1',
+  'checkbox': 'h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500',
+  'radio': 'h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500',
+  'select': 'block w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-200',
+
   // Cards
-  'card': 'rounded-3xl bg-white shadow-xl overflow-hidden border-2 border-pink-100 hover:shadow-2xl hover:border-pink-200 transition-all duration-300',
-  'card-body': 'p-8',
-  'card-title': 'text-2xl font-bold mb-4 text-purple-600',
-  'card-actions': 'mt-6 flex gap-4',
-  'card-image': 'w-full h-56 object-cover hover:scale-105 transition-transform duration-300',
-  
-  // Alerts
-  'alert': 'p-6 rounded-2xl mb-6 border-2 shadow-lg',
-  'alert-success': 'bg-green-50 text-green-600 border-green-200 shadow-green-100',
-  'alert-error': 'bg-red-50 text-red-600 border-red-200 shadow-red-100',
-  'alert-warning': 'bg-yellow-50 text-yellow-600 border-yellow-200 shadow-yellow-100',
-  'alert-info': 'bg-blue-50 text-blue-600 border-blue-200 shadow-blue-100',
-  
+  'card': 'bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300',
+  'card-body': 'p-6',
+  'card-title': 'text-xl font-bold text-gray-800 mb-3',
+  'card-subtitle': 'text-gray-500 text-base',
+  'card-image': 'w-full h-48 object-cover transition-transform duration-300 hover:scale-105',
+  'card-header': 'flex items-center justify-between border-b border-gray-100 p-4',
+  'card-footer': 'border-t border-gray-100 p-4 bg-gray-50',
+
+  // Alerts & Notifications
+  'alert': 'rounded-lg p-4 mb-4 flex items-center',
+  'alert-success': 'bg-green-50 text-green-700 border border-green-200',
+  'alert-error': 'bg-red-50 text-red-700 border border-red-200',
+  'alert-warning': 'bg-yellow-50 text-yellow-700 border border-yellow-200',
+  'alert-info': 'bg-blue-50 text-blue-700 border border-blue-200',
+  'toast': 'fixed z-50 right-4 top-4 bg-white shadow-lg rounded-lg p-4 border border-gray-200',
+
+  // Grid & Flexbox
+  'grid-col-2': 'grid grid-cols-1 sm:grid-cols-2 gap-4',
+  'grid-col-3': 'grid grid-cols-1 md:grid-cols-3 gap-6',
+  'grid-col-4': 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6',
+  'flex-center': 'flex items-center justify-center',
+  'flex-between': 'flex items-center justify-between',
+  'flex-col': 'flex flex-col',
+  'flex-row': 'flex flex-row',
+
+  // Badges & Tags
+  'badge': 'inline-block px-3 py-1 rounded-full text-xs font-semibold',
+  'badge-primary': 'bg-blue-100 text-blue-800',
+  'badge-success': 'bg-green-100 text-green-800',
+  'badge-warning': 'bg-yellow-100 text-yellow-800',
+  'badge-danger': 'bg-red-100 text-red-800',
+
+  // Modals & Overlays
+  'modal-overlay': 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center',
+  'modal-container': 'bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 relative',
+  'modal-close': 'absolute top-4 right-4 text-gray-500 hover:text-gray-700',
+
+  // Tabs
+  'tabs-container': 'flex border-b border-gray-200',
+  'tab': 'px-4 py-2 -mb-px border-b-2 border-transparent hover:border-gray-300 transition-colors',
+  'tab-active': 'border-blue-500 text-blue-600 font-semibold',
+
+  // Progress & Loaders
+  'progress-bar': 'w-full bg-gray-200 rounded-full h-2.5',
+  'progress-fill': 'bg-blue-600 h-2.5 rounded-full',
+  'spinner': 'animate-spin rounded-full border-4 border-blue-500 border-t-transparent',
+
+  // Tooltips
+  'tooltip': 'absolute z-50 px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity',
+
   // Utilities
-  'shadow-smooth': 'shadow-xl shadow-pink-100/50',
-  'transition-smooth': 'transition-all duration-300 ease-bounce',
+  'hover-lift': 'transition-transform duration-300 hover:-translate-y-2',
+  'shadow-smooth': 'shadow-md hover:shadow-xl transition-shadow',
+  'bg-gradient': 'bg-gradient-to-r from-blue-500 to-purple-600 text-white',
+  'clip-text-gradient': 'text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600',
+  'transition-smooth': 'transition-all duration-300 ease-in-out',
+  'absolute-center': 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
+  
+  // Spacing Utilities
+  'space-y-sm': 'space-y-2',
+  'space-y-md': 'space-y-4',
+  'space-y-lg': 'space-y-6',
+  'space-x-sm': 'space-x-2',
+  'space-x-md': 'space-x-4',
+  'space-x-lg': 'space-x-6',
+
+  // Responsive Typography
+  'responsive-text': 'text-base sm:text-lg md:text-xl',
+
+  // Dark Mode?? not sure what to do here
+  'dark-mode-bg': 'bg-gray-900 text-gray-100',
+  'dark-mode-card': 'bg-gray-800 border-gray-700 text-gray-200',
+  'dark-mode-text': 'text-gray-300 hover:text-gray-100',
+
+  // Interactive States
+  'interactive': 'cursor-pointer select-none active:scale-95 transition-transform',
+  'group-hover-show': 'opacity-0 group-hover:opacity-100 transition-opacity',
+  
+  // Accessibility
+  'screen-reader-only': 'absolute w-1 h-1 p-0 m-[-1px] overflow-hidden clip-path[inset(50%)] whitespace-nowrap border-0',
+
+  // Special Effects
+  'glassmorphism': 'bg-white bg-opacity-20 backdrop-blur-lg border border-white border-opacity-20 shadow-lg',
+  'neon-shadow': 'hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.5)] transition-all',
 }
 
 const replace_custom_classes = () => {
