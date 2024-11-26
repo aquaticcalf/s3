@@ -1,6 +1,6 @@
 (function() {
-  // Load Tailwind CSS from CDN
-  const loadTailwind = () => {
+
+  const load_tailwind = () => {
     return new Promise((resolve, reject) => {
       const script = document.createElement('script')
       script.src = 'https://cdn.tailwindcss.com'
@@ -10,10 +10,9 @@
     })
   }
 
-  // Set up default CSS variables
-  const setupDefaultStyles = () => {
-    const defaultStyles = document.createElement('style')
-    defaultStyles.textContent = `
+  const setup_default_styles = () => {
+    const default_styles = document.createElement('style')
+    default_styles.textContent = `
       :root {
         --primary: 59 130 246;
         --primary-hover: 37 99 235;
@@ -23,11 +22,10 @@
         --secondary-active: 55 65 81;
       }
     `
-    document.head.appendChild(defaultStyles)
+    document.head.appendChild(default_styles)
   }
 
-  // Configure Tailwind
-  const configureTailwind = () => {
+  const configure_tailwind = () => {
     if (typeof window.tailwind === 'undefined') {
       console.error('Tailwind CSS not loaded')
       return
@@ -53,9 +51,8 @@
     }
   }
 
-  // Apply custom utility classes
-  const applyCustomStyles = () => {
-    const utilityClasses = {
+  const apply_custom_styles = () => {
+    const utility_classes = {
       // Layout
       '.container': 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8',
       
@@ -114,25 +111,23 @@
     }
 
     const style = document.createElement('style')
-    style.textContent = Object.entries(utilityClasses)
+    style.textContent = Object.entries(utility_classes)
       .map(([selector, classes]) => `${selector} { @apply ${classes}; }`)
       .join('\n')
     document.head.appendChild(style)
   }
 
-  // Initialize everything
   const init = async () => {
     try {
-      await loadTailwind()
-      setupDefaultStyles()
-      configureTailwind()
-      applyCustomStyles()
+      await load_tailwind()
+      setup_default_styles()
+      configure_tailwind()
+      apply_custom_styles()
       console.log('Tailwind CSS setup completed successfully')
     } catch (error) {
       console.error('Failed to initialize Tailwind CSS:', error)
     }
   }
 
-  // Run initialization
   init()
 })()
