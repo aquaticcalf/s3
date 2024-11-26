@@ -88,7 +88,7 @@ const custom_classes = {
   "highlight": "text-yellow-600 bg-yellow-100 px-2 rounded",
 
   // Buttons
-  "btn": "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed",
+  "btn": "px-3 py-1 rounded-sm cursor-pointer inline-flex items-center justify-center font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed",
   "btn-primary": "bg-blue-500 text-white hover:bg-blue-600 active:bg-blue-700 focus:ring-blue-300 shadow-md hover:shadow-lg",
   "btn-secondary": "bg-gray-500 text-white hover:bg-gray-600 active:bg-gray-700 focus:ring-gray-300 shadow-md hover:shadow-lg",
   "btn-danger": "bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus:ring-red-300 shadow-md hover:shadow-lg",
