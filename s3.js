@@ -65,128 +65,108 @@ Check your Browserslist config to be sure that your targets are set up correctly
 
 const custom_classes = {
   // Layout & Containers
-  'container': 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full',
-  'section': 'py-16 sm:py-20 lg:py-24',
-  'wrapper': 'relative max-w-full overflow-hidden',
+  "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full",
+  "section": "py-16 sm:py-20 lg:py-24",
+  "wrapper": "relative max-w-full overflow-hidden",
+  "container-fluid": "w-full px-4 sm:px-6 lg:px-8",
+  "row": "flex flex-wrap -mx-4",
+  "col": "px-4",
 
   // Typography
-  'display-1': 'text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 tracking-tight',
-  'display-2': 'text-4xl sm:text-5xl font-bold text-gray-800 tracking-tight',
-  'heading-1': 'text-3xl sm:text-4xl font-bold text-gray-900 mb-4',
-  'heading-2': 'text-2xl sm:text-3xl font-semibold text-gray-800 mb-3',
-  'heading-3': 'text-xl sm:text-2xl font-semibold text-gray-700 mb-3',
-  'paragraph': 'text-base text-gray-600 leading-relaxed mb-4',
-  'text-small': 'text-sm text-gray-500',
-  'text-large': 'text-lg text-gray-700',
-  'link': 'text-blue-600 hover:text-blue-800 underline-offset-4 hover:underline transition-colors',
+  "display-1": "text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 tracking-tight",
+  "display-2": "text-4xl sm:text-5xl font-bold text-gray-800 tracking-tight",
+  "display-3": "text-3xl sm:text-4xl font-bold text-gray-700 tracking-tight",
+  "heading-1": "text-3xl sm:text-4xl font-bold text-gray-900 mb-4",
+  "heading-2": "text-2xl sm:text-3xl font-semibold text-gray-800 mb-3",
+  "heading-3": "text-xl sm:text-2xl font-semibold text-gray-700 mb-3",
+  "subheading": "text-lg sm:text-xl text-gray-500 mb-2",
+  "paragraph": "text-base text-gray-600 leading-relaxed mb-4",
+  "text-small": "text-sm text-gray-500",
+  "text-large": "text-lg text-gray-700",
+  "link": "text-blue-600 hover:text-blue-800 underline-offset-4 hover:underline transition-colors",
+  "muted": "text-gray-400",
+  "highlight": "text-yellow-600 bg-yellow-100 px-2 rounded",
 
   // Buttons
-  'btn': 'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed',
-  'btn-primary': 'bg-blue-500 text-white hover:bg-blue-600 active:bg-blue-700 focus:ring-blue-300 shadow-md hover:shadow-lg',
-  'btn-secondary': 'bg-gray-500 text-white hover:bg-gray-600 active:bg-gray-700 focus:ring-gray-300 shadow-md hover:shadow-lg',
-  'btn-success': 'bg-green-500 text-white hover:bg-green-600 active:bg-green-700 focus:ring-green-300 shadow-md hover:shadow-lg',
-  'btn-danger': 'bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus:ring-red-300 shadow-md hover:shadow-lg',
-  'btn-ghost': 'bg-transparent text-gray-700 hover:bg-gray-100 active:bg-gray-200 focus:ring-gray-200',
-  'btn-outline': 'border-2 border-blue-500 text-blue-500 bg-transparent hover:bg-blue-50 hover:border-blue-600 focus:ring-blue-200',
-  'btn-sm': 'px-3 py-1.5 text-sm',
-  'btn-lg': 'px-6 py-3 text-lg',
-  'btn-icon': 'p-2 rounded-full hover:bg-gray-100',
+  "btn": "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed",
+  "btn-primary": "bg-blue-500 text-white hover:bg-blue-600 active:bg-blue-700 focus:ring-blue-300 shadow-md hover:shadow-lg",
+  "btn-secondary": "bg-gray-500 text-white hover:bg-gray-600 active:bg-gray-700 focus:ring-gray-300 shadow-md hover:shadow-lg",
+  "btn-danger": "bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus:ring-red-300 shadow-md hover:shadow-lg",
+  "btn-ghost": "bg-transparent text-gray-700 hover:bg-gray-100 active:bg-gray-200 focus:ring-gray-200",
+  "btn-outline": "border-2 border-blue-500 text-blue-500 bg-transparent hover:bg-blue-50 hover:border-blue-600 focus:ring-blue-200",
+  "btn-sm": "px-3 py-1.5 text-sm",
+  "btn-lg": "px-6 py-3 text-lg",
+  "btn-icon": "p-2 rounded-full hover:bg-gray-100",
+  "btn-block": "w-full flex justify-center",
+  "btn-loading": "relative flex items-center justify-center",
 
   // Forms
-  'form-group': 'mb-4',
-  'form-input': 'block w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 disabled:bg-gray-100 disabled:cursor-not-allowed',
-  'form-label': 'block text-sm font-medium text-gray-700 mb-2',
-  'form-error': 'text-red-500 text-sm mt-1',
-  'form-hint': 'text-xs text-gray-500 mt-1',
-  'checkbox': 'h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500',
-  'radio': 'h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500',
-  'select': 'block w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-200',
+  "form-group": "mb-4",
+  "form-input": "block w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 disabled:bg-gray-100 disabled:cursor-not-allowed",
+  "form-label": "block text-sm font-medium text-gray-700 mb-2",
+  "form-error": "text-red-500 text-sm mt-1",
+  "form-hint": "text-xs text-gray-500 mt-1",
+  "textarea": "block w-full rounded-lg border border-gray-300 px-4 py-2 resize-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200",
+  "checkbox": "h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500",
+  "radio": "h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500",
+  "select": "block w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-200",
+  "form-switch": "relative inline-flex items-center h-6 rounded-full w-11 bg-gray-200 transition-colors cursor-pointer",
+  "form-switch-active": "bg-blue-500",
 
   // Cards
-  'card': 'bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300',
-  'card-body': 'p-6',
-  'card-title': 'text-xl font-bold text-gray-800 mb-3',
-  'card-subtitle': 'text-gray-500 text-base',
-  'card-image': 'w-full h-48 object-cover transition-transform duration-300 hover:scale-105',
-  'card-header': 'flex items-center justify-between border-b border-gray-100 p-4',
-  'card-footer': 'border-t border-gray-100 p-4 bg-gray-50',
+  "card": "bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300",
+  "card-body": "p-6",
+  "card-title": "text-xl font-bold text-gray-800 mb-3",
+  "card-subtitle": "text-gray-500 text-base",
+  "card-image": "w-full h-48 object-cover transition-transform duration-300 hover:scale-105",
+  "card-header": "flex items-center justify-between border-b border-gray-100 p-4",
+  "card-footer": "border-t border-gray-100 p-4 bg-gray-50",
+  "card-overlay": "absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center",
 
   // Alerts & Notifications
-  'alert': 'rounded-lg p-4 mb-4 flex items-center',
-  'alert-success': 'bg-green-50 text-green-700 border border-green-200',
-  'alert-error': 'bg-red-50 text-red-700 border border-red-200',
-  'alert-warning': 'bg-yellow-50 text-yellow-700 border border-yellow-200',
-  'alert-info': 'bg-blue-50 text-blue-700 border border-blue-200',
-  'toast': 'fixed z-50 right-4 top-4 bg-white shadow-lg rounded-lg p-4 border border-gray-200',
+  "alert": "rounded-lg p-4 mb-4 flex items-center",
+  "alert-success": "bg-green-50 text-green-700 border border-green-200",
+  "alert-error": "bg-red-50 text-red-700 border border-red-200",
+  "alert-warning": "bg-yellow-50 text-yellow-700 border border-yellow-200",
+  "alert-info": "bg-blue-50 text-blue-700 border border-blue-200",
+  "toast": "fixed z-50 right-4 top-4 bg-white shadow-lg rounded-lg p-4 border border-gray-200",
 
   // Grid & Flexbox
-  'grid-col-2': 'grid grid-cols-1 sm:grid-cols-2 gap-4',
-  'grid-col-3': 'grid grid-cols-1 md:grid-cols-3 gap-6',
-  'grid-col-4': 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6',
-  'flex-center': 'flex items-center justify-center',
-  'flex-between': 'flex items-center justify-between',
-  'flex-col': 'flex flex-col',
-  'flex-row': 'flex flex-row',
-
-  // Badges & Tags
-  'badge': 'inline-block px-3 py-1 rounded-full text-xs font-semibold',
-  'badge-primary': 'bg-blue-100 text-blue-800',
-  'badge-success': 'bg-green-100 text-green-800',
-  'badge-warning': 'bg-yellow-100 text-yellow-800',
-  'badge-danger': 'bg-red-100 text-red-800',
+  "grid-col-2": "grid grid-cols-1 sm:grid-cols-2 gap-4",
+  "grid-col-3": "grid grid-cols-1 md:grid-cols-3 gap-6",
+  "grid-col-4": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+  "flex-center": "flex items-center justify-center",
+  "flex-between": "flex items-center justify-between",
+  "flex-col": "flex flex-col",
+  "flex-row": "flex flex-row",
+  "flex-wrap": "flex flex-wrap",
+  "grid-auto-fit": "grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4",
 
   // Modals & Overlays
-  'modal-overlay': 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center',
-  'modal-container': 'bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 relative',
-  'modal-close': 'absolute top-4 right-4 text-gray-500 hover:text-gray-700',
+  "modal-overlay": "fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center",
+  "modal-container": "bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 relative",
+  "modal-close": "absolute top-4 right-4 text-gray-500 hover:text-gray-700",
 
   // Tabs
-  'tabs-container': 'flex border-b border-gray-200',
-  'tab': 'px-4 py-2 -mb-px border-b-2 border-transparent hover:border-gray-300 transition-colors',
-  'tab-active': 'border-blue-500 text-blue-600 font-semibold',
+  "tabs-container": "flex border-b border-gray-200",
+  "tab": "px-4 py-2 -mb-px border-b-2 border-transparent hover:border-gray-300 transition-colors",
+  "tab-active": "border-blue-500 text-blue-600 font-semibold",
 
   // Progress & Loaders
-  'progress-bar': 'w-full bg-gray-200 rounded-full h-2.5',
-  'progress-fill': 'bg-blue-600 h-2.5 rounded-full',
-  'spinner': 'animate-spin rounded-full border-4 border-blue-500 border-t-transparent',
-
-  // Tooltips
-  'tooltip': 'absolute z-50 px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity',
-
-  // Utilities
-  'hover-lift': 'transition-transform duration-300 hover:-translate-y-2',
-  'shadow-smooth': 'shadow-md hover:shadow-xl transition-shadow',
-  'bg-gradient': 'bg-gradient-to-r from-blue-500 to-purple-600 text-white',
-  'clip-text-gradient': 'text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600',
-  'transition-smooth': 'transition-all duration-300 ease-in-out',
-  'absolute-center': 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
-  
-  // Spacing Utilities
-  'space-y-sm': 'space-y-2',
-  'space-y-md': 'space-y-4',
-  'space-y-lg': 'space-y-6',
-  'space-x-sm': 'space-x-2',
-  'space-x-md': 'space-x-4',
-  'space-x-lg': 'space-x-6',
-
-  // Responsive Typography
-  'responsive-text': 'text-base sm:text-lg md:text-xl',
-
-  // Dark Mode?? not sure what to do here
-  'dark-mode-bg': 'bg-gray-900 text-gray-100',
-  'dark-mode-card': 'bg-gray-800 border-gray-700 text-gray-200',
-  'dark-mode-text': 'text-gray-300 hover:text-gray-100',
-
-  // Interactive States
-  'interactive': 'cursor-pointer select-none active:scale-95 transition-transform',
-  'group-hover-show': 'opacity-0 group-hover:opacity-100 transition-opacity',
-  
-  // Accessibility
-  'screen-reader-only': 'absolute w-1 h-1 p-0 m-[-1px] overflow-hidden clip-path[inset(50%)] whitespace-nowrap border-0',
+  "progress-bar": "w-full bg-gray-200 rounded-full h-2.5",
+  "progress-fill": "bg-blue-600 h-2.5 rounded-full",
+  "spinner": "animate-spin rounded-full border-4 border-blue-500 border-t-transparent",
 
   // Special Effects
-  'glassmorphism': 'bg-white bg-opacity-20 backdrop-blur-lg border border-white border-opacity-20 shadow-lg',
-  'neon-shadow': 'hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.5)] transition-all',
+  "glassmorphism": "bg-white bg-opacity-20 backdrop-blur-lg border border-white border-opacity-20 shadow-lg",
+  "neon-shadow": "hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.5)] transition-all",
+  "blur-effect": "backdrop-blur-sm bg-opacity-40",
+  "shadow-effect": "shadow-lg hover:shadow-2xl transition-shadow duration-300",
+
+  // Utilities
+  "absolute-center": "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
+  "hover-scale": "transition-transform duration-300 hover:scale-105",
+  "text-gradient": "text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500"
 }
 
 const replace_custom_classes = () => {
